@@ -16,7 +16,10 @@ class YT:
         self.api = aioyoutube.Api()
 
     async def search_videos(self, text, limit=5):
-        logger.debug("utils/youtube/search_videos: Searching", text=text, limit=limit)
+        logger.debug(
+            "utils/youtube/search_videos: Searching",
+            text=text,
+            limit=limit)
         results = await self.api.search(
             key=SUPER_YOUTUBE_API_KEY, text=text, max_results=limit, order="relevance"
         )
